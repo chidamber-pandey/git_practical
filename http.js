@@ -1,12 +1,9 @@
-let http = require('http');
-let server =http.createServer((req,res)=>{
-    res.write("learning http server");
-    res.end();
+let fs = require('fs');
+let path =__dirname+'/a.text';
 
+fs.writeFile(path,"learning fs module writefile",(err)=>{
+    if(err)
+        console.log(err)
+    else
+        console.log("done successfully....")
 })
-
-
-server.listen(3000,()=>{
-    console.log("app is running at port 3000");
-})
-
